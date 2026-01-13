@@ -9,8 +9,6 @@ import { SuccessCard } from './SuccessCard';
 import { LeadProgressPanel } from './LeadProgressPanel';
 import { SessionHistory } from './SessionHistory';
 import { InformationPanel } from './InformationPanel';
-import { YouTubeStrategyCard } from './YouTubeStrategyCard';
-import { PlanComparisonTable } from './PlanComparisonTable';
 import { useChatState } from '@/hooks/useChatState';
 import { ChevronUp, ChevronDown, History, Info } from 'lucide-react';
 
@@ -212,32 +210,6 @@ export function ChatContainer() {
           {state.isTyping && <TypingIndicator />}
 
           {showPricing && <PricingCards onSelectPlan={handleSelectPlan} />}
-
-          {/* YouTube Permission Request */}
-          {showYTPermission && (
-            <YouTubeStrategyCard
-              channelUrl={detectedYTChannel || undefined}
-              showPermissionRequest={true}
-              onAcceptAnalysis={handleAcceptYTAnalysis}
-              onDeclineAnalysis={handleDeclineYTAnalysis}
-            />
-          )}
-
-          {/* YouTube Strategy Benefits Table */}
-          {showYTStrategy && !showYTPermission && (
-            <YouTubeStrategyCard
-              channelUrl={detectedYTChannel || undefined}
-              showPermissionRequest={false}
-            />
-          )}
-
-          {/* Plan Comparison Table (when Basic selected) */}
-          {showPlanComparison && (
-            <PlanComparisonTable
-              selectedPlan={activeSession.selectedPlan}
-              onSwitchToPro={handleSwitchFromComparison}
-            />
-          )}
 
           {showConfirmation && (
             <ConfirmationCard

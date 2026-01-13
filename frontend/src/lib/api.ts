@@ -26,7 +26,9 @@ export interface ChatResponse {
         show_pricing_cards?: boolean;
         show_plan_comparison?: boolean;
         show_youtube_permission?: boolean;
+        show_youtube_analysis?: boolean;
         youtube_channel?: string;
+        youtube_analysis?: any;
         show_confirmation?: boolean;
         show_success?: boolean;
     };

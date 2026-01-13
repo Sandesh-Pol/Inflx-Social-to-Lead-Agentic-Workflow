@@ -172,6 +172,7 @@ export function useChatState() {
           platform: response.state.platform,
         },
         youtubeLink: response.state.yt_channel,
+        showYouTubeAnalysis: response.ui_components?.show_youtube_analysis || false,
         isSubmitted: response.state.lead_captured,
       });
 
